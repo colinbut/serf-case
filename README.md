@@ -1,4 +1,26 @@
-# serf-case
+# Serf Case
+
+This case shows Hashicorp's Serf product. 
+
+## Intro
+
+Serf is a tool for:
+
+- Cluster Membership
+- Failure Detection
+- De-centralized Orchestration
+
+Benefits/Selling Points:
+
++ De-centralized
++ Fault Tolerant
++ Highly Available
+
+## Problem Solving
+
+1. Membership
+2. Failure Detection & Recovery
+3. Custom Event Propagation
 
 ## Events
 
