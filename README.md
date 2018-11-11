@@ -2,7 +2,20 @@
 
 This case shows Hashicorp's Serf product. 
 
-## Intro
+* [Intro](#intro)
+* [Serf Benefits](#serf-benefits)
+* [Problem Solving](#problem-solving)
+* [Running the Agent](#running-the-agent)
+    * [Starting Agent](#starting-agent)  
+    * [Checking Cluster members](#checking-cluster-members)
+    * [Stopping Agent](#stopping-agent)
+* [Joining the Cluster](#joining-cluster)
+* [Leaving the Cluster](#leaving-cluster)
+* [Events](#events)
+* [Custom Events](#custom-events)
+* [Custom Queries](#custom-queries)
+
+## <a name="intro"></a>Intro
 
 Serf is a tool for:
 
@@ -10,39 +23,34 @@ Serf is a tool for:
 - Failure Detection
 - De-centralized Orchestration
 
-Benefits/Selling Points:
-
-+ De-centralized
-+ Fault Tolerant
-+ Highly Available
-
-## Serf Benefits
+## <a name="serf-benefits"></a>Serf Benefits
 
 - Decentralized
 - Fault Tolerant
 - Self-Healing
+- Highly Available
 
-## Problem Solving
+## <a name="problem-solving"></a>Problem Solving
 
 1. Membership
 2. Failure Detection & Recovery
 3. Custom Event Propagation
 
-## Running the Agent
+## <a name="running-the-agent"></a>Running the Agent
 
-### Starting Agent
+### <a name="starting-agent"></a>Starting Agent
 
 ```bash
 serf agent
 ```
 
-### Checking Cluster members
+### <a name="checking-cluster-members"></a>Checking Cluster members
 
 ```bash
 serf members
 ```
 
-### Stopping Agent
+### <a name="stopping-agent"></a>Stopping Agent
 
 __Gracefully Leave__
 ```bash
@@ -60,7 +68,7 @@ __Forcefully Leave__
 serf force-leave
 ```
 
-## Joining the Cluster
+## <a name="joining-cluster"></a>Joining the Cluster
 
 Starting multiple agents...
 
@@ -77,11 +85,11 @@ serf join 127.20.20.11
 
 You can check the status of agents after joining by _Checking Cluster members_
 
-## Leaving the Cluster
+## <a name="leaving-cluster"></a>Leaving the Cluster
 
 To leave just stop the agent you want to leave. See options in Stopping Agent section.
 
-## Events
+## <a name="events"></a>Events
 
 Serf currently invokes the following types of events:
 
@@ -93,7 +101,7 @@ Serf currently invokes the following types of events:
 6. user
 7. query
 
-## Event Handlers
+## <a name="event-handlers"></a>Event Handlers
 
 Starting a Serf agent with the event handler.
 
@@ -103,7 +111,7 @@ serf agent -log-level=debug -event-handler=handler.sh
 
 flagging the serf agent in log level debug mode so we can see the stdin/stderr of the events.
 
-## Custom Events
+## <a name="custom-events"></a>Custom Events
 
 To send a custom event we simply do:
 
@@ -111,7 +119,7 @@ To send a custom event we simply do:
 serf event [your custom event]
 ```
 
-## Custom Queries
+## <a name="custom-queries"></a>Custom Queries
 
 E.g. to query the load 
 
